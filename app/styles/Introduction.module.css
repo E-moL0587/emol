@@ -1,0 +1,81 @@
+.introduction {
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 4rem 1rem;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.imageContainer {
+  flex: 1;
+}
+
+.profileImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 3/4;
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.socialLink {
+  color: #ffffff;
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.socialLink:hover {
+  color: #d1d5db;
+}
+
+.socialIcon {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .imageContainer {
+    max-width: 320px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+  }
+}
