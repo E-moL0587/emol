@@ -11,7 +11,7 @@ const Introduction = () => {
 
         <div className={styles.content}>
           <h1 className={styles.title}>Coding as Art</h1>
-          <p className={styles.description}>Hi, I'm Kaito Takeuchi, a computer science student at Seikei University. I'm aspiring to be a backend engineer.</p>
+          <p className={styles.description}>Hi, I&apos;m Kaito Takeuchi, a computer science student at Seikei University. I&apos;m aspiring to be a backend engineer.</p>
 
           <div className={styles.socialLinks}>
             <a href="https://twitter.com/Kaito_32768" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
