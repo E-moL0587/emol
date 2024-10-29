@@ -10,10 +10,23 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.container.visible {
+  opacity: 1;
+}
+
+.imageWrapper {
+  flex: 1;
+  position: relative;
 }
 
 .imageContainer {
-  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .profileImage {
@@ -21,44 +34,111 @@
   height: auto;
   object-fit: cover;
   aspect-ratio: 3/4;
+  transform: scale(0.9);
+  transition: transform 0.5s ease-out;
+}
+
+.imageContainer:hover .profileImage {
+  transform: scale(0.95);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17, 24, 39, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.imageContainer:hover .imageOverlay {
+  opacity: 1;
 }
 
 .content {
   flex: 1;
 }
 
+.titleContainer {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
 .title {
+  display: inline-block;
   font-size: 2.25rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  animation: slideInDown 1s ease-out forwards;
 }
 
 .description {
   font-size: 1rem;
   margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 500ms;
 }
 
 .socialLinks {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
+  padding-top: 1rem;
 }
 
 .socialLink {
-  color: #ffffff;
-  font-size: 1.25rem;
-  transition: color 0.3s ease;
-}
-
-.socialLink:hover {
-  color: #d1d5db;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: white;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 .socialIcon {
-  display: inline-block;
   width: 1.5rem;
   height: 1.5rem;
-  text-align: center;
-  line-height: 1.5rem;
+}
+
+.socialLink:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.socialLink:nth-child(1) {
+  animation-delay: 1000ms;
+}
+
+.socialLink:nth-child(2) {
+  animation-delay: 1200ms;
+}
+
+.socialLink:nth-child(3) {
+  animation-delay: 1400ms;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 768px) {
@@ -67,7 +147,7 @@
     gap: 1.5rem;
   }
 
-  .imageContainer {
+  .imageWrapper {
     max-width: 320px;
   }
 
