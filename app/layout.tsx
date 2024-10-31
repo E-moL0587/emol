@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Kaito Takeuchi's Portfolio",
+  title: "EmoL wrote this.",
   description: "A portfolio website by Kaito Takeuchi, showcasing skills and projects.",
   icons: { icon: "/images/profile.jpg" }
 };
