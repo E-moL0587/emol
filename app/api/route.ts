@@ -12,9 +12,10 @@ export async function POST(request: Request) {
 
     const mailOptions = {
       from: 'kai.0121.pika@gmail.com',
-      to: userMail,
+      to: 'kai.0121.pika@gmail.com',
       subject: 'Contact Form Message',
-      text: message
+      text: message,
+      replyTo: userMail
     };
 
     await transporter.sendMail(mailOptions);
